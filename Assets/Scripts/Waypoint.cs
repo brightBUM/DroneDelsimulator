@@ -7,7 +7,7 @@ public class Waypoint : MonoBehaviour
     public Waypoint previousWayPoint;
     public Waypoint nextWayPoint;
     [Range(0f,5f)]
-    public float width = 1f;
+    public float width = 2.8f;
     public Vector3 GetPosition()
     {
         Vector3 minbounds = transform.position + transform.right * width / 2;
