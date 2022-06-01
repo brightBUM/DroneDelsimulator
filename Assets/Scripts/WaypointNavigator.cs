@@ -13,12 +13,16 @@ public class WaypointNavigator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cnc.SetDestination(currentWaypoint.GetPosition());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(cnc.reachedDestination)
+        {
+            currentWaypoint = currentWaypoint.nextWayPoint;
+            cnc.SetDestination(currentWaypoint.GetPosition());
+        }
     }
 }

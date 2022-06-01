@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class CharacterNavigationController : MonoBehaviour
 {
-    [SerializeField] float movementSpeed = 1f;
+    [SerializeField] public float movementSpeed = 1f;
     [SerializeField] float rotationSpeed = 120f;
     [SerializeField] float stopDistance = 2.5f;
     [SerializeField] Vector3 destination;
-    [SerializeField] public Transform nextDestination;
-    [SerializeField] bool reachedDestination;
+    //[SerializeField] public Transform nextDestination;
+    [SerializeField] public bool reachedDestination;
 
     // Start is called before the first frame update
     void Start()
     {
-        destination = nextDestination.position;
+        //destination = nextDestination.position;
     }
 
     // Update is called once per frame
@@ -34,7 +34,8 @@ public class CharacterNavigationController : MonoBehaviour
             }
             else
             {
-                destination = nextDestination.position;
+                reachedDestination = true;
+                //destination = nextDestination.position;
             }
         }
     }
