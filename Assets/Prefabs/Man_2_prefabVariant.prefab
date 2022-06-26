@@ -441,7 +441,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491793031777067368}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 8965dfdfd3a4a96449b6a0014080ebbb, type: 3}
   m_Controller: {fileID: 9100000, guid: 6af778a0cb2f9d5458bd670826763c66, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -480,6 +480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1
   rotationSpeed: 120
-  stopDistance: 0.3
+  stopDistance: 0.8
   destination: {x: 0, y: 0, z: 0}
   reachedDestination: 0
+  destinationDistance: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PedestrianSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject pedestrianPrefab;
+    [SerializeField] List<GameObject> pedestrianPrefabs;
     [SerializeField] int no_of_pedestrains;
 
     // Start is called before the first frame update
@@ -18,10 +18,10 @@ public class PedestrianSpawner : MonoBehaviour
         int count = 0;
         while(count<no_of_pedestrains)
         {
-            GameObject objref = Instantiate(pedestrianPrefab);
+            GameObject objref = Instantiate(pedestrianPrefabs[Random.Range(0,pedestrianPrefabs.Count)]);
             Transform child =  transform.GetChild(Random.Range(0, transform.childCount - 1));
             objref.GetComponent<WaypointNavigator>().currentWaypoint = child.GetComponent<Waypoint>() ;
-            objref.transform.position = child.position;
+            objref.transform.position = child.position+new Vector3(0,0,1);
             SetRandomSpeed(objref);
             yield return new WaitForEndOfFrame();
             count++;

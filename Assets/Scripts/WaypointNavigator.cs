@@ -6,6 +6,7 @@ public class WaypointNavigator : MonoBehaviour
 {
     [SerializeField] CharacterNavigationController cnc;
     public Waypoint currentWaypoint;
+    int direction;
     private void Awake()
     {
         cnc = GetComponent<CharacterNavigationController>();
@@ -13,6 +14,7 @@ public class WaypointNavigator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        direction = Mathf.RoundToInt(Random.Range(0, 1));
         cnc.SetDestination(currentWaypoint.GetPosition());
     }
 
@@ -21,7 +23,14 @@ public class WaypointNavigator : MonoBehaviour
     {
         if(cnc.reachedDestination)
         {
-            currentWaypoint = currentWaypoint.nextWayPoint;
+            if(direction == 0)
+            {
+                currentWaypoint = currentWaypoint.nextWayPoint;
+            }
+            else
+            {
+                currentWaypoint = currentWaypoint.previousWayPoint;
+            }
             cnc.SetDestination(currentWaypoint.GetPosition());
         }
     }

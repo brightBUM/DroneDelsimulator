@@ -10,6 +10,7 @@ public class CharacterNavigationController : MonoBehaviour
     [SerializeField] Vector3 destination;
     //[SerializeField] public Transform nextDestination;
     [SerializeField] public bool reachedDestination;
+    [SerializeField] float destinationDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class CharacterNavigationController : MonoBehaviour
         {
             Vector3 destinationDirection = destination - transform.position;
             destinationDirection.y = 0;
-            float destinationDistance = destinationDirection.magnitude;
+            destinationDistance = destinationDirection.magnitude;
             if (destinationDistance >= stopDistance)
             {
                 reachedDestination = false;
