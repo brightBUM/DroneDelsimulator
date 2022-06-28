@@ -11,7 +11,7 @@ namespace Alpha
         [SerializeField] public OrderUIelement[] ordersUI;
         //[SerializeField] GameObject dashBoardCanvas;
         //[SerializeField] GameObject parentItem;
-        [SerializeField] float minDistance;
+        //[SerializeField] float minDistance;
         //[SerializeField] House[] hoses;
         
         //[Header("Order stats")]
